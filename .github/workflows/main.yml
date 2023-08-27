@@ -15,12 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: Platane/snk@v3.0.0
+      - uses: Platane/snk@v3
         id: snake-gif
         with:
           github_user_name: MilanDanilovic
           gif_out_path: dist/github-contribution-grid-snake.gif
           svg_out_path: dist/github-contribution-grid-snake.svg
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: git status
 
